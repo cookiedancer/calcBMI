@@ -1,6 +1,6 @@
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 02/26/2016
-//Version: 1.0.2
+//Version: 1.0.3
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
 //Include iostream library for input output
@@ -30,7 +30,8 @@ if (!cin){
             cin.clear();
         }
         cin.ignore(100, '\n');
-
+        if ((UserHeight<22)||(UserHeight>107))
+        cout << "You have enter a value out of our range. " << endl;
 }while((UserHeight<22)||(UserHeight>107));
 //Weight input
 do{
@@ -41,7 +42,9 @@ do{
             cin.clear();
         }
         cin.ignore(100, '\n');
-}while((UserWeight>400) || (UserWeight<100));
+    if ((UserWeight>400)||(UserWeight<80))
+        cout << "You have enter a value out of our range. " << endl;
+}while((UserWeight>400) ||(UserWeight<80));
 
     //We need to add some input validation here for UserHeight and UserWeight
     //Section coming soon
