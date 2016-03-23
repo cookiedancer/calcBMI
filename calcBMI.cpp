@@ -1,4 +1,4 @@
-//Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco
+//Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 02/26/2016
 //Version: 1.0.2
 //This program will calculate a User's Body Mass Index based on their Height and Weight
