@@ -1,6 +1,6 @@
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 02/26/2016
-//Version: 1.0.4
+//Version: 1.0.5
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
 //Include iostream library for input output
@@ -22,7 +22,7 @@ int main()
 //Begin User input section
 //Height input
 do{
-    cout << "First, please enter your height in inches. (Example: 72) Then hit enter." << endl;
+    cout << "First, please enter your height in inches. (Example: 72) Then press enter." << endl;
     cin >> UserHeight;
 
 if (!cin){
@@ -35,7 +35,7 @@ if (!cin){
 }while((UserHeight<22)||(UserHeight>107));
 //Weight input
 do{
-    cout << "Next, please enter your weight in pounds. (Example: 180) Then hit enter. ";
+    cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. ";
     cin >> UserWeight;
     if (!cin){
             cout << "Not a number! " << endl;
@@ -64,8 +64,8 @@ do{
     else if(BMI<=24.9)
         cout << "You have a normal BMI";
     else if(BMI<=29.9)
-        cout << "You are overweight";
-    else if(BMI<=40)
+        cout << "You are overweight"; //the teacher wants somthing "nicer"
+    else if(BMI<=40)                 //than obese and extremely obese
         cout << "You are obese";
     else if (BMI>40)
         cout << "You are extremely obese";
