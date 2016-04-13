@@ -38,7 +38,7 @@ do{
 while((UserHeight<22)||(UserHeight>107));
 //Ask the user for their weight
 do{
-    cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. ";
+    cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. " << endl;
     cin >> UserWeight;
     //If the value entered is not a number, raise a warning
     if (!cin){
