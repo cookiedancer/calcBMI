@@ -65,8 +65,8 @@ do{
         cout << "You have a normal BMI";
     else if(BMI<=29.9)
         cout << "You are overweight"; //the teacher wants somthing "nicer"
-    else if(BMI<=40)                 //than obese and extremely obese
-        cout << "You are obese";
+    else if(BMI<=40)                 //than obese and extremely obese 
+        cout << "You are obese";     //Team captain vetoes teachers request.  I feel the terms we use are the most politically correct.
     else if (BMI>40)
         cout << "You are extremely obese";
 
