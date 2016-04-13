@@ -1,6 +1,6 @@
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 02/26/2016
-//Version: 1.0.5
+//Version: 1.0.6
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
 //Include iostream library for input output
@@ -66,7 +66,7 @@ do{
     else if(BMI<=29.9)
         cout << "You are overweight"; //the teacher wants somthing "nicer"
     else if(BMI<=40)                 //than obese and extremely obese 
-        cout << "You are obese";     //Team captain vetoes teachers request.  I feel the terms we use are the most politically correct.  Maybe we can word our output a little better instead.
+        cout << "You are obese";     //Team captain veto. I feel the terms we use are the most politically correct. Maybe we can word our output a little better instead.
     else if (BMI>40)
         cout << "Based on your personal information, you are quite obese.";
 
