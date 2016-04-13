@@ -1,0 +1,3 @@
+Height:  65
+Weight:  150
+BMI: 24
