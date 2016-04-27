@@ -22,7 +22,6 @@ int main()
     int UserHeight, UserWeight; //Height and Weight
     float BMI;
     string firstName, lastName;
-    string c;
     ofstream outData;
 
      //Open files
