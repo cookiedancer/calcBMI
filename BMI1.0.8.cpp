@@ -25,7 +25,9 @@ int main()
     ofstream outData;
 
      //Open files
-     outData.open("BMI.out.txt", fstream::app);
+      outData.open("BMI.out.txt", fstream::app);
+    std::ofstream out("BMI.out.txt", std::ios_base::app | std::ios_base::out);
+    out<<endl;
 
     //Welcome the User to the program and give them brief instructions
     cout << "Greetings, and welcome to calcBMI!" << endl;
