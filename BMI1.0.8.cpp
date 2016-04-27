@@ -37,9 +37,7 @@ int main()
 
     cout << "Please enter your last name. " << endl;
     cin >> lastName;
-    if (!cin){
-        cout << "Not a name " << endl;
-    }
+    
     //Height input
 do{
     cout << "Now, please enter your height in inches. (Example: 72) Then press enter." << endl;
