@@ -1,39 +1,47 @@
+
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
-//Date last updated: 02/26/2016
-//Version: 1.0.6
+//Date last updated: 04/27/2016
+//Version: 1.0.8
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
 //Include iostream library for input output
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <iomanip>
+#include <ctime> //used to get current date/time
 using namespace std;
 
 int main()
 {
+    //Get current date for output
+    time_t t = time(0);   // get time now
+    struct tm * now = localtime( & t );
+
     //Declare storage variables for User input and calculated output integers for the input and float for the output
-    int UserHeight; //Height
-    int UserWeight; //Weight
+    int UserHeight, UserWeight; //Height and Weight
     float BMI;
+    string firstName, lastName;
+    string c;
     ofstream outData;
-     ifstream inData;
 
      //Open files
-     inData.open("BMI.in.txt");
-     outData.open("BMI.out.txt");
-
-    //Read Values
-     inData>> UserHeight >> UserWeight;
-
+     outData.open("BMI.out.txt", fstream::app);
 
     //Welcome the User to the program and give them brief instructions
     cout << "Greetings, and welcome to calcBMI!" << endl;
     cout << "We will be asking you a series of questions to calculate your Body Mass Index." << endl;
 
     //Begin User input section
+    cout << "Please enter your first name. " << endl;
+    cin >> firstName;
+
+    cout << "Please enter your last name. " << endl;
+    cin >> lastName;
+
     //Height input
 do{
-    cout << "First, please enter your height in inches. (Example: 72) Then press enter." << endl;
+    cout << "Now, please enter your height in inches. (Example: 72) Then press enter." << endl;
     cin >> UserHeight;
 
     //Test if height is an invalid entry and raise an error
@@ -50,7 +58,7 @@ do{
 while((UserHeight<22)||(UserHeight>107));
 //Ask the user for their weight
 do{
-    cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. ";
+    cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. " << endl;
     cin >> UserWeight;
     //If the value entered is not a number, raise a warning
     if (!cin){
@@ -69,7 +77,7 @@ while((UserWeight>400) ||(UserWeight<80));
     BMI = (UserWeight * 703) / (UserHeight * UserHeight);
 
     //Now we need to output the BMI result to the User
-    cout << "Your BMI is " << BMI << endl;
+    cout << firstName << " your BMI is " << BMI << endl;
 
     //Output the User's body type based on their calculated BMI
     if (BMI<=18.5)
@@ -83,15 +91,19 @@ while((UserWeight>400) ||(UserWeight<80));
     else if (BMI>40)
         cout << "Based on your BMI result, your body type is considered overweight.";
 
-//Output results
-    outData << "Height:  "<< UserHeight
-        <<setprecision(2)<<endl
+    //Output results
+    outData
+            << "This is your fitness tracker. It will automatically update every time you run the calcBMI program."
+            << "Date (MM/DD/YYYY): " << (now->tm_mon + 1) << '/' << now->tm_mday << '/' <<  (now->tm_year + 1900) << endl
+            << "First Name: " << firstName << endl
+            << "Last Name: " << lastName << endl
+            << "Height:  "<< UserHeight
+            <<setprecision(2)<<endl
             <<"Weight:  " <<UserWeight
             <<setprecision(2)<<endl
             <<"BMI: " << BMI
             <<setprecision(2)<<endl;
 
-    inData.close();
     outData.close();
 
    return 0;
