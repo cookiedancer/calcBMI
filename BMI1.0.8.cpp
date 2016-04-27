@@ -1,6 +1,6 @@
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 04/27/2016
-//Version: 1.0.8
+//Version: 1.1.0
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
 //Include iostream library for input output
@@ -22,10 +22,11 @@ int main()
     int UserHeight, UserWeight; //Height and Weight
     float BMI;
     string firstName, lastName;
+    string c;
     ofstream outData;
 
      //Open files
-     outData.open("BMI.out.txt");
+     outData.open("BMI.out.txt", fstream::app);
 
     //Welcome the User to the program and give them brief instructions
     cout << "Greetings, and welcome to calcBMI!" << endl;
@@ -37,7 +38,7 @@ int main()
 
     cout << "Please enter your last name. " << endl;
     cin >> lastName;
-    
+
     //Height input
 do{
     cout << "Now, please enter your height in inches. (Example: 72) Then press enter." << endl;
@@ -73,7 +74,7 @@ do{
 }
 while((UserWeight>400) ||(UserWeight<80));
     //Calculate the BMI here and store it to the float BMI
-    BMI = GetBmi(UserHeight,UserWeight);
+     BMI = GetBmi(UserHeight,UserWeight);
 
     //Now we need to output the BMI result to the User
     cout << firstName << " your BMI is " << BMI << endl;
@@ -92,8 +93,7 @@ while((UserWeight>400) ||(UserWeight<80));
 
     //Output results
     outData
-            << "This is your fitness tracker." << endl
-            << "It will automatically update every time you run the calcBMI program." << endl
+            << "This is your fitness tracker. It will automatically update every time you run the calcBMI program."
             << "Date (MM/DD/YYYY): " << (now->tm_mon + 1) << '/' << now->tm_mday << '/' <<  (now->tm_year + 1900) << endl
             << "First Name: " << firstName << endl
             << "Last Name: " << lastName << endl
