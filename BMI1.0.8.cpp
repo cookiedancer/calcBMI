@@ -1,16 +1,16 @@
 //Programmers: Sean Tosloskie, Christian Harrison, Mclene Velasco, Timothy Haddox
 //Date last updated: 04/27/2016
-//Version: 1.1.0
+//Version: 1.1.1
 //This program will calculate a User's Body Mass Index based on their Height and Weight
 
-//Include iostream library for input output
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <iomanip>
-#include <ctime> //used to get current date/time
+#include <iostream> //Include iostream library for input output
+#include <string>   //string library to use string function
+#include <fstream>  //used to read and write to file
+#include <iomanip>  //used to set precision when writing to file
+#include <ctime>    //used to get current date/time
 using namespace std;
-float GetBmi(int,int);
+
+float GetBmi(int,int); //prototype for getting BMI
 
 int main()
 {
@@ -22,10 +22,11 @@ int main()
     int UserHeight, UserWeight; //Height and Weight
     float BMI;
     string firstName, lastName;
+
     ofstream outData;
 
      //Open files
-      outData.open("BMI.out.txt", fstream::app);
+    outData.open("BMI.out.txt", fstream::app);
     std::ofstream out("BMI.out.txt", std::ios_base::app | std::ios_base::out);
     out<<endl;
 
@@ -57,6 +58,7 @@ do{
 }
 //Continue if height is good input
 while((UserHeight<22)||(UserHeight>107));
+
 //Ask the user for their weight
 do{
     cout << "Next, please enter your weight in pounds. (Example: 180) Then press enter. " << endl;
@@ -74,6 +76,7 @@ do{
 
 }
 while((UserWeight>400) ||(UserWeight<80));
+
     //Calculate the BMI here and store it to the float BMI
      BMI = GetBmi(UserHeight,UserWeight);
 
@@ -94,7 +97,8 @@ while((UserWeight>400) ||(UserWeight<80));
 
     //Output results
     outData
-            << "This is your fitness tracker. It will automatically update every time you run the calcBMI program."
+            << "This is your fitness tracker. " << endl
+            << "It will automatically update every time you run the calcBMI program. " << endl
             << "Date (MM/DD/YYYY): " << (now->tm_mon + 1) << '/' << now->tm_mday << '/' <<  (now->tm_year + 1900) << endl
             << "First Name: " << firstName << endl
             << "Last Name: " << lastName << endl
@@ -105,14 +109,16 @@ while((UserWeight>400) ||(UserWeight<80));
             <<"BMI: " << BMI
             <<setprecision(2)<<endl;
 
+    //close file
     outData.close();
 
    return 0;
 }
 
-float GetBmi(int a,int b)
+float GetBmi(int a,int b) //function to calculate BMI
 {
     float r;
     r = (b * 703) / (a * a);
     return r;
 }
+
