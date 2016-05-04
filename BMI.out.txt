@@ -1,3 +1,21 @@
+
+This is your fitness tracker. It will automatically update every time you run the calcBMI program.Date (MM/DD/YYYY): 5/4/2016
+First Name: Larry
+Last Name: Miller
+Height:  75
+Weight:  100
+BMI: 12
+
+This is your fitness tracker. It will automatically update every time you run the calcBMI program.Date (MM/DD/YYYY): 5/4/2016
+First Name: Leah
+Last Name: Mason
 Height:  65
-Weight:  150
-BMI: 24
+Weight:  160
+BMI: 26
+
+This is your fitness tracker. It will automatically update every time you run the calcBMI program.Date (MM/DD/YYYY): 5/4/2016
+First Name: Bob
+Last Name: Walker
+Height:  60
+Weight:  160
+BMI: 31
